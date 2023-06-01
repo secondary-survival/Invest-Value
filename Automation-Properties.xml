@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<InvestValue>
+    <InvestForEdu>
+        <UI>
+            <URL>https://invest4edu.com/</URL>
+            <Chrome_Driver_Path>src/main/Selenium/drivers/chromedriver.exe</Chrome_Driver_Path>
+        </UI>
+    </InvestForEdu>
+</InvestValue>
