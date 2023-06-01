@@ -1,28 +1,27 @@
-package automationsteps.ui.hooks;
+package automationsteps.ui.base;
 
 import data.DataProvider;
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import java.util.logging.LogManager;
 
 import static utils.Browser.Capability.setOptions;
 
 /**
- * Hooks class for all UI automation scripts.
+ * AutomationBase class for performing setup and teardown actions before and after the test suite execution.
  */
-public class AutomationHooks {
+public class Base {
     static WebDriver driver;
 
     /**
      * Performs setup actions before the test suite execution.
      * It initializes the logging, sets up the WebDriver, and opens the specified URL.
      */
-    @Before
+    @BeforeSuite
     public static void suiteSetup() {
-        LogManager.getLogManager().getLogger("info").info("Suite Setup Started");
         System.setProperty("webdriver.chrome.driver", DataProvider.XMLDataProvider("./InvestValue/InvestForEdu/UI", "Chrome_Driver_Path"));
         driver = new ChromeDriver(setOptions());
         driver.get(DataProvider.XMLDataProvider("./InvestValue/InvestForEdu/UI", "URL"));
@@ -32,9 +31,8 @@ public class AutomationHooks {
      * Performs teardown actions after the test suite execution.
      * It logs the suite teardown, and quits the WebDriver instance.
      */
-    @After
+    @AfterSuite
     public void suiteTearDown() {
-        LogManager.getLogManager().getLogger("info").info("Suite Teardown Started");
         driver.quit();
     }
 }

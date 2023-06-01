@@ -5,6 +5,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Invest Value/NeoFinDeskAutomation/pom.xml" />
+        <option value="$PROJECT_DIR$/InvestForEdu/InvestForEduAutomation/pom.xml" />
+        <option value="$PROJECT_DIR$/InvestForEdu/Invest4EduAutomation/pom.xml" />
       </list>
     </option>
   </component>
